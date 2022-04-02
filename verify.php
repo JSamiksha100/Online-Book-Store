@@ -1,4 +1,10 @@
 <?php
+
+	$serverApi = new ServerApi(ServerApi::V1);
+	$client = new MongoDB\Client('mongodb+srv://Sami:<JSami@123>@cluster0.irozi.mongodb.net/BKS?retryWrites=true&w=majority', [], ['serverApi' => $serverApi]);
+	$db = $client->test;
+
+
 	$email = $_POST['inputEmail'];
 	$pswd = $_POST['inputPasswd'];
 
@@ -22,10 +28,6 @@
 		}
 	}
 
-$serverApi = new ServerApi(ServerApi::V1);
-$client = new MongoDB\Client(
-    'mongodb+srv://Sami:<JSami@100>@cluster0.g7mgq.mongodb.net/BKS?retryWrites=true&w=majority', [], ['serverApi' => $serverApi]);
 
-$db = $client->test;
 
 ?>
