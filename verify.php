@@ -2,7 +2,7 @@
 	$email = $_POST['inputEmail'];
 	$pswd = $_POST['inputPasswd'];
 
-	$conn = mysqli_connect("localhost", "root", "", "www_project");
+	$conn = mysqli_connect("localhost", "root", "", "BKS");
 	if(!$conn){
 		echo "Cannot connecto to database " . mysqli_connect_error($conn);
 		exit;
@@ -21,4 +21,11 @@
 			break;
 		}
 	}
+
+$serverApi = new ServerApi(ServerApi::V1);
+$client = new MongoDB\Client(
+    'mongodb+srv://Sami:<JSami@100>@cluster0.g7mgq.mongodb.net/BKS?retryWrites=true&w=majority', [], ['serverApi' => $serverApi]);
+
+$db = $client->test;
+
 ?>
